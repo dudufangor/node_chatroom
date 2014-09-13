@@ -32,14 +32,12 @@ Chat.prototype.processCommand = function (command) {
 
             this.changeRoom(room);
             break;
-
         case 'nick':
             var words.shift();
             var name = words.join(' ');
 
             this.changeRoom(room);
             break;
-
         default:
             message = 'Unrecognized command.';
             break;
