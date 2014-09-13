@@ -12,10 +12,10 @@ function send404 (response) {
 }
 
 function sendFile (response, filePath, fileContents) {
-    response.writeHead({
+    response.writeHead(
         200,
         { 'Content-Type': mime.lookup(path.basename(filePath)) }
-    });
+    );
 
     response.end(fileContents);
 }
@@ -41,7 +41,7 @@ function serveStatic (response, cache, absPath) {
     }
 }
 
-http.createServer(function (request, response) {
+var server = http.createServer(function (request, response) {
     var filePath = false;
 
     if (request.url == '/') {
@@ -52,6 +52,11 @@ http.createServer(function (request, response) {
 
     var absPath = './' + filePath;
     serveStatic(response, cache, absPath);
-}).listen(300, function () {
+});
+
+server.listen(3000, function () {
     console.log('Server listening on port 3000.')
 });
+
+var chatServer = require('./lib/chat_server');
+chatServer.listen(server);
