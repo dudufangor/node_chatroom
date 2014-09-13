@@ -26,3 +26,28 @@ a {
   overflow: auto;
   width: 690px;
 }
+
+#room-list {
+  float:  right;
+  height: 300px;
+  overflow: auto;
+  width:  100px;
+}
+
+#room-list div {
+  border-bottom: 1px solid #EEE;
+}
+
+#room-list div:hover {
+  background-color: #DDD;
+}
+
+#send-message {
+  margin-bottom: 1em;
+  margin-right: 1em;
+  width: 700px;
+}
+
+#help {
+  font: 10px 'Lucida Grande', Helvetica, Arial, sans-serif;
+}
